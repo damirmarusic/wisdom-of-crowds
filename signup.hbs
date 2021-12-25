@@ -1,0 +1,29 @@
+{{!< default}}
+        </div>
+    </div>
+</nav>
+<div class="hero">
+    <div class="hero-body page">
+        <figure class="article-image-container">
+            <img class="article-image" src="{{asset 'images/WoC-Square.png'}}" alt="Big-W Wisdom of Crowds">
+        </figure>
+        <div class="article-single-meta-container">
+            <div class="mid-meta-holder">
+                <div class="article-single-title">
+                    Sign-Up for Wisdom of Crowds
+                </div>
+                <div class="article-single-blurb">
+                    Enter your email below to get our latest content delivered to your inbox.
+                </div>
+                <div class="article-single-form">
+                    {{#if @member}}
+                    {{!-- Logged in --}}
+                    You are already logged in. Click here to <a href="javascript:" data-members-signout>sign out</a>.
+                    {{else}}
+                    {{>signup-form}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

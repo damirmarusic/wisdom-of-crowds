@@ -1,0 +1,31 @@
+<div class="overlay">
+    <div class="overlay-holder">
+        <div class="overlay-container">
+            <div class="overlay-dismiss">
+                <a class="closer"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="overlay-message-container">
+                <figure class="overlay-logo-container">
+                    <img class="overlay-logo" src="{{asset 'images/WoC-Square.png'}}" alt="Big-W Wisdom of Crowds">
+                </figure>
+                <div class="overlay-message overlay-signup">
+                    Thank you for signing up, <span class="overlay-name"><strong>{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</strong>!</span>
+                </div>
+                <div class="overlay-message overlay-login">
+                    Welcome back, <span class="overlay-name"><strong>{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</strong>!</span>
+                </div>
+            </div>
+            <div class="overlay-submessage overlay-signup">
+                You are now subscribed to our newsletter, and have access to the commenting features on the site. If you like what you see, you can support our work (and unlock all the <strong>premium content</strong> on the site) by <a href="/subscribe/">becoming a member</a>.
+            </div>
+            <div class="overlay-submessage overlay-login">
+                We really appreciate you being part of our community. 
+                {{^if @member.paid}}
+                If you're liking what you're seeing, and want to support our work (and unlock all the <strong>premium content</strong> on the site) <a href="/subscribe/">click here</a>.
+                {{else}}
+                Thank you for your ongoing support.
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

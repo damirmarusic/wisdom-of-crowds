@@ -1,0 +1,72 @@
+{{!< default}}
+        </div>
+    </div>
+</nav>
+{{#author}}
+<div class="author-container">
+    <div class="author-single">
+        <div class="photo-container">
+            <img class="photo" 
+                    srcset="{{img_url profile_image size="xs"}} 750w,
+                            {{img_url profile_image size="s"}} 1023w,
+                            {{img_url profile_image size="m"}} 1200w"
+                    sizes="(max-width: 1200px) 750px, 1023px"
+                    src="{{img_url profile_image size="s"}}"
+                    alt="{{name}}">
+        </div>
+        <div class="bio-container">
+            <div class="name">{{name}}</div>
+            <div class="bio">{{bio}}</div>
+            <div class="social">
+                <div class="social-item"><a href="https://twitter.com/{{twitter}}"><i class="fab fa-twitter"></i></a></div>
+                <div class="social-item"><a href="https://facebook.com/{{facebook}}"><i class="fab fa-facebook"></i></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/author}}
+<div class="main-container index">
+    <!-- Normal Articles -->
+    <section class="articles">
+        {{#foreach posts}}
+        <div class="article author_article {{post_class}}">
+            {{#if feature_image}}
+            <figure class="article-image-container">
+                <img class="article-image" 
+                    srcset="{{img_url feature_image size="xs"}} 750w,
+                            {{img_url feature_image size="s"}} 1023w,
+                            {{img_url feature_image size="m"}} 1200w"
+                    sizes="(max-width: 1200px) 750px, 1023px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{title}}">
+            </figure>
+            {{/if}}
+            <div class="article-text">
+                <span class="article-title"><a href="{{url}}">{{title}}</a></span>
+                <span class="article-blurb">
+                    {{#if meta_description}}
+                        {{meta_description}}
+                    {{else}}
+                        {{excerpt}}
+                    {{/if}}
+                </span>
+                <span class="article-byline">{{authors separator=" &amp; "}}</span>
+                <span class="meta">
+                    <span class="article-tags">
+                    {{#foreach tags}}
+                    <span class="tag">
+                        <a href="/{{slug}}/">{{name}}</a>
+                    </span>
+                    {{/foreach}}
+                    {{#has visibility="paid"}}
+                        <span class="tag member">Members Only</span>
+                    {{/has}}
+                    </span>
+                    <div class="published">{{date published_at format="MMMM DD, YYYY"}}</div>
+                </span>
+            </div>
+        </div>
+        {{/foreach}}
+        {{pagination}}
+    </section>
+</div>

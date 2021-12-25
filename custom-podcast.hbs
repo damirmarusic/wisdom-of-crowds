@@ -1,0 +1,93 @@
+{{!< default}}
+        </div>
+    </div>
+</nav>
+{{> hero-podcast}}
+{{#post}}
+<div class="article-container">
+    <div class="article-single{{#if @member}} member-placeholder{{else}} non-member-placeholder{{/if}}">
+
+        {{#if access}}
+        {{content}}
+        {{else}}
+                <div class="content-teaser">
+                    {{{html}}}
+                    <div id="fadeout">&nbsp;</div>
+                </div>
+        {{> content-cta}}
+        {{/if}}
+
+        {{#if access}}
+        <div class="listen-icons">
+            <div class="listen-icon">
+                <div class="l-icon">
+                    <a href="https://podcasts.apple.com/us/podcast/the-wisdom-of-crowds/id1475204845"><i class="fas fa-podcast"></i></a>
+                </div>
+                <div class="l-label">iTunes</div>
+            </div>
+            <div class="listen-icon">
+                <div class="l-icon">
+                    <a href="https://open.spotify.com/show/69U2Zw75VZkD4Cicly7WEy"><i class="fab fa-spotify"></i></a>
+                </div>
+                <div class="l-label">Spotify</div>
+            </div>
+            <div class="listen-icon">
+                <div class="l-icon">
+                    <a href="https://podcasts.google.com/?feed=aHR0cDovL2ZlZWRzLnNvdW5kY2xvdWQuY29tL3VzZXJzL3NvdW5kY2xvdWQ6dXNlcnM6NjAyNTkxNDgvc291bmRzLnJzcw&ved=0CAUQrrcFahcKEwjA1fqopOjoAhUAAAAAHQAAAAAQBQ"><i class="fab fa-google"></i></a>
+                </div>
+                <div class="l-label">Google</div>
+            </div>
+            <div class="listen-icon">
+                <div class="l-icon">
+                    <a href="https://www.stitcher.com/podcast/wisdom-of-crowds"><i class="fas fa-ellipsis-h"></i></a>
+                </div>
+                <div class="l-label">Stitcher</div>
+            </div>
+        </div>
+        {{^if @member}}
+        <div class=login-holder>
+            <div class="membership">
+                <figure class="woc-square-logo-holder-smaller">
+                    <img class="woc-square-logo-smaller" src="{{asset 'images/WoC-Square-trans.png'}}" alt="WoC Logo">
+                </figure>
+                <div class="membership-text-smaller">
+                    Want to get our latest content delivered straight to your inbox? Enter your email below and become one of the Crowd!
+                </div>
+            </div>
+            {{>signup-form}}
+            <div class="already-member">
+                Already signed up? {{#link href="/login/"}}Sign in here{{/link}}.
+            </div>
+        </div>
+        {{/if}}
+        {{#if @member.paid}}
+            <div class="members-pod-instructions">
+                <p>Thank you for being a paying member! To add the members-only episode feed to your favorite podcast app and have the latest episodes pushed to you when they go live, click
+                <a href="https://wisdomofcrowds.live/podcasts/rss-members/">this link</a> on your phone to add the podcast to your app of choice.
+                You can also copy the following text—<strong>https://wisdomofcrowds.live/podcasts/rss-members/</strong>—and add it manually to your app (<a href="https://medium.com/@joshmuccio/how-to-manually-add-a-rss-feed-to-your-podcast-app-on-desktop-ios-android-478d197a3770">instructions here</a>).</p>
+            </div>
+        {{/if}}
+        {{/if}}
+        {{> comments}}
+    </div>
+</div>
+{{/post}}
+{{#if @member}}
+    <script type="text/javascript">
+    var karma = new amplitude.Identify().add('karma', 1);
+    amplitude.getInstance().identify(karma);
+    amplitude.getInstance().logEvent('Viewed Podcast');
+    </script>
+{{/if}}
+<script>
+window.commentoCustomText = function(count) {
+  if(count === 0) {
+    return "No comments";
+  } else if (count === 1) {
+    return "1 comment";
+  } else {
+    return count + " comments";
+  }
+}
+</script>
+<script src="https://cdn.commento.io/js/count.js" data-custom-text="window.commentoCustomText"></script>

@@ -1,0 +1,27 @@
+<!--- <div class="comment-title-commento">Comments</div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<div id="commento"></div> --->
+<hr style='background-color:#666;border-width:0;color:#666;height:1px;line-height:0;text-align:left;width:100%;'/>
+
+<div id="cove-comments-holder">
+<h2><span id="cove-count"></span> Comments</h2>
+
+{{^if @member}}
+  <div class="member-box-comment"><a href="#/portal/signin">Sign in or become a {{@site.title}} member</a> to join the conversation.<br></div>
+{{/if}}
+
+<div id="cove"></div>
+
+{{#if @member}}
+  <p>Signed in as {{@member.name}} · <a href="javascript:" data-members-signout>Sign out</a></p>
+{{/if}}
+
+<script>
+const Cove = {
+  contentId: "{{id}}",
+  memberId: "{{@member.uuid}}",
+  memberEmail: "{{@member.email}}",
+  memberName: "{{@member.firstname}}"
+}
+</script>
+</div>

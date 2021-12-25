@@ -1,0 +1,67 @@
+{{!< default}}
+        </div>
+    </div>
+</nav>
+<div class="article-container">
+    <div class="article-single">
+    
+    {{#if @member.paid}}
+
+    <div class="signup-text">
+        You are already subscribed, <strong>{{@member.firstname}}</strong>! Thank you for supporting Wisdom of Crowds!
+    </div>
+    
+    {{else}}
+    <div class="offer-holder">
+        <div class="membership">
+            <figure class="woc-square-logo-holder-smaller">
+                <img class="woc-square-logo-smaller" src="{{asset 'images/WoC-Square-trans.png'}}" alt="WoC Logo">
+            </figure>
+            <div class="membership-text">
+                Support Wisdom of Crowds<br/>
+                and Get Members-Only Content
+            </div>
+        </div>
+        <div class="signup-text">
+            <div>As a lover and supporter of wisdom, subscribe now and you will get something the rest of the crowd doesn't: access to special weekly members-only content.</div>
+            <div class="choices"><strong>Choose Your Plan:</strong></div>
+        </div>
+        <div class="pitches">
+            <div class="offer">
+                <span class="signup-text-inside">
+                    <div><i class="fas fa-check"></i> <strong>Unlock Paid Content</strong></div>
+                    <div><i class="fas fa-check"></i> Read our regular Q&amp;A features</div>
+                    <div><i class="fas fa-check"></i> Listen to members-only podcast episodes</div>
+                    <div><i class="fas fa-check"></i> Access to our archives</div>
+                    <div><i class="fas fa-check"></i> Support our work</div>
+                    <div>&nbsp;</div>
+                    <div class="button-holder">
+                    <a class="checkout-button"
+                        href="javascript:"
+                        data-members-plan="Monthly">
+                        $5/month</a>
+                </div>
+                </span>
+            </div>
+            <div class="offer">
+                <span class="signup-text-inside">
+                    <div><i class="fas fa-check"></i> <strong>Unlock Paid Content</strong></div>
+                    <div><i class="fas fa-check"></i> Read our regular Q&amp;A features</div>
+                    <div><i class="fas fa-check"></i> Listen to members-only podcast episodes</div>
+                    <div><i class="fas fa-check"></i> Access to our archives</div>
+                    <div><i class="fas fa-check"></i> Support our work</div>
+                    <div><i class="fas fa-check"></i> <strong>Save 16%!</strong></div>
+                    <div class="button-holder">
+                        <a class="checkout-button"
+                            href="javascript:"
+                            data-members-plan="Yearly">
+                            $50/year</a>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    
+    </div>
+</div>

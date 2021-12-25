@@ -1,0 +1,42 @@
+{{#post}}
+<div class="hero">
+    <div class="hero-body">
+        <figure class="article-image-container">
+            <img class="article-image" 
+                    srcset="{{img_url feature_image size="xs"}} 100w,
+                            {{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 900w,
+                            {{img_url feature_image size="xl"}} 1200w"
+                    src="{{img_url feature_image size="xl"}}"
+                    alt="{{title}}">
+        </figure>
+        <div class="article-single-meta-container">
+            <div class="top-meta-holder">
+                <div class="article-single-tags">
+                    {{#foreach tags}}<span class="tag"><a href="/{{slug}}/">{{name}}</a></span>{{/foreach}}
+                    {{#has visibility="paid"}}
+                        <span class="tag member">Members Only</span>
+                    {{/has}}
+                </div>
+                <div class="article-single-title">
+                    {{title}}
+                </div>
+                <div class="article-single-blurb">
+                    {{excerpt}}
+                </div>
+                <div class="article-single-byline">
+                    {{authors separator=" &amp; "}}
+                </div>
+            </div>
+            <div class="date-meta-holder">
+                <div class="date-meta-item">
+                    <div class="meta-share"><a href="https://twitter.com/intent/tweet?via=wcrowdslive&url={{url absolute='true'}}"><i class="fab fa-twitter"></i></a></div>
+                    <div class="meta-share"><a href="https://facebook.com/sharer/sharer.php?u={{url absolute='true'}}"><i class="fab fa-facebook"></i></a></div>
+                </div>
+                <div class="date-meta-item">Published on: {{date published_at}}&nbsp;&nbsp;|&nbsp;&nbsp;<span data-cove-count-comments="{{id}}"></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/post}}

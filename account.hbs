@@ -1,0 +1,105 @@
+{{!< default}}
+        </div>
+    </div>
+</nav>
+<div class="account-holder">
+    {{#if @member.paid}}
+        {{!-- Logged in, paying member: Show account info --}}
+        {{#foreach @member.subscriptions}}
+        <div class="inner">
+            <figure class="account-image">
+                <img class="woc-square-logo-account" src="{{asset 'images/WoC-Square-trans.png'}}" alt="WoC Logo">
+            </figure>
+            <div class="account-box">
+                <div class="status-header">
+                    <h1>Manage Your Account</h1>
+                    {{#if cancel_at_period_end}}
+                        <div class="blurb">
+                            <strong>Your subscription will expire on {{date current_period_end format="DD MMM YYYY"}}.</strong> If you change your mind in the meantime you can turn auto-renew back on to continue your subscription.
+                        </div>
+                    {{else}}
+                        <div class="blurb">
+                            You have an active account with access to all areas. Get in touch if have any problems or need some help getting things updated, and thanks for subscribing.
+                        </div>
+                    {{/if}}
+                </div>
+            </div>       
+        </div>
+        <div class="member-details">
+            <div class="member-detail">
+                <label class="member-detail-label">Email address</label>
+                <span class="member-detail-content">{{@member.email}}</span>
+            </div>
+
+            <div class="member-detail">
+                <label class="member-detail-label">Your plan</label>
+                    <span class="member-detail-content">{{price currency=currency}}{{price plan.amount}}/{{plan.interval}}</span>
+            </div>
+
+            <div class="member-detail">
+                <label class="member-detail-label">Card</label>
+                <span class="member-detail-content">**** **** **** {{default_payment_card_last4}}</span>
+            </div>
+
+            <div class="member-detail">
+                <label class="member-detail-label">
+                    {{#if cancel_at_period_end}}
+                        Expires
+                    {{else}}
+                        Next bill date
+                    {{/if}}
+                </label>
+                <span class="member-detail-content">{{date current_period_end format="DD MMM YYYY"}}</span>
+            </div>
+        </div> 
+        <div class="member-actions">
+            <div class="member-action">
+                <a class="button" href="javascript:"
+                    data-members-edit-billing
+                    data-members-success="{{@site.url}}/account/?stripe=billing-update-success"
+                    data-members-cancel="{{@site.url}}/account/?stripe=billing-update-cancel">Edit billing info</a>
+            </div>
+            <div class="member-action">{{cancel_link}}</div>
+            <div class="member-action">
+                <a class="button" href="javascript:" data-members-signout>Sign out</a>
+            </div>
+        </div>
+        {{/foreach}}
+
+    {{else if @member}}
+        <div class="inner">
+            <figure class="account-image">
+                <img class="woc-square-logo-account" src="{{asset 'images/WoC-Square-trans.png'}}" alt="WoC Logo">
+            </figure>
+        {{!-- Logged in, not paying: Link to checkout --}}
+            <div class="account-box">
+                <div class="status-header">
+                    <h1>Manage Your Account</h1>
+                    <div class="blurb">You are getting our newsletter free of charge, but are missing out on all the members-only content!</div>
+                </div>
+            </div>
+        </div>
+        <div class="member-details">
+            <div class="member-detail">
+                <label class="member-detail-label">Email Address:</label>
+                <span class="member-detail-content">{{@member.email}}</span>
+            </div>
+        </div>
+        <div class="member-actions">
+            <div class="member-action">
+                <a class="button primary" href="{{@site.url}}/subscribe/">
+                <span class="button-content">Subscribe now</span>
+            </a>
+            </div>
+            <div class="member-action">
+                <a class="button" href="javascript:" data-members-signout>Sign out</a>
+            </div>
+        </div>
+
+    {{else}}
+
+        {{!-- Not logged in: Redirect to signin --}}
+        <script>window.location = '{{@site.url}}/login/';</script>
+
+    {{/if}}
+</div>

@@ -1,0 +1,40 @@
+{{!< default}}
+        </div>
+    </div>
+</nav>
+<div class="main-container homepage">
+    <!-- Normal Articles -->
+    <section class="articles">
+        <div id="demessays-title">The Democracy Essays</div>
+        {{#foreach posts visibility="all"}}
+        <div class="article">
+            {{#if feature_image}}
+            <figure class="article-image-container">
+                <img class="article-image" src="{{feature_image}}" alt="{{title}}">
+            </figure>
+            {{/if}}
+            <div class="article-text">
+                <span class="article-title"><a href="{{url}}">{{title}}</a></span>
+                <span class="article-blurb">
+                    {{#if meta_description}}
+                        {{meta_description}}
+                    {{else}}
+                        {{excerpt}}
+                    {{/if}}
+                </span>
+                <span class="meta">
+                    <span class="article-byline">{{authors separator=" &amp; "}}</span>
+                </span>
+                <span class="article-tags">
+                {{#foreach tags}}<span class="tag">{{name}}</span>{{/foreach}}
+                {{#has visibility="paid"}}
+                    <span class="tag member">Members Only</span>
+                {{/has}}
+            </span>
+            </div>
+        </div>
+        {{/foreach}}
+        {{pagination}}
+    </section>
+    {{> sidebar-tde}}
+</div>

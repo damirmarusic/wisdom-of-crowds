@@ -1,0 +1,58 @@
+<section class="sidebar">
+            <div class="sidebar-unit">
+                <div class="sidebar-headline">
+                    <div class="the-side-headline">
+                        {{#link href="/introducing-the-democracy-essays/"}}What are the Democracy Essays?{{/link}}
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-unit curated">
+                <div class="sidebar-headline">
+                    <div class="the-side-headline">
+                        Curated By
+                    </div>
+                </div>
+                <div class="avatars-two">
+                    <div class="avatar">
+                        <a href="/author/samuel/">
+                            <img class="avatar-image" srcset="/content/images/size/w100/2021/03/Kimbriel.jpg 750w,
+                                            /content/images/size/w300/2021/03/Kimbriel.jpg 1023w,
+                                            /content/images/size/w600/2021/03/Kimbriel.jpg 1200w" sizes="(max-width: 1200px) 750px, 1023px" src="/content/images/size/w100/2021/03/Kimbriel.jpg" alt="Samuel Kimbriel">
+                        </a>
+                    </div>
+                    <div class="avatar">
+                        <a href="/author/osita/">
+                            <img class="avatar-image" srcset="/content/images/size/w100/2021/03/nwanevu.jpg 750w,
+                                            /content/images/size/w300/2021/03/nwanevu.jpg 1023w,
+                                            /content/images/size/w600/2021/03/nwanevu.jpg 1200w" sizes="(max-width: 1200px) 750px, 1023px" src="/content/images/size/w100/2021/03/nwanevu.jpg" alt="Osita Nwanevu">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{^if @member}}
+            <div class="sidebar-unit signup">
+                <div class="sidebar-headline">
+                    <div class="the-side-headline">
+                        Sign Up For Wisdom of Crowds
+                    </div>
+                </div>
+                <div class="form-group">
+                    <form data-members-form="signup">
+                    <div class="form-group-sidebar">
+                        <input data-members-email placeholder="Enter Your Email" autocomplete="false" />
+                        <button class="button primary" type="submit">
+                            <span class="button-content">SIGN UP</span>
+                            <span class="button-loader">{{> "icons/loader"}}</span>
+                        </button>
+                    </div>
+                    <div class="message-success">
+                        Check your inbox and click the link we sent you to confirm your email.
+                    </div>
+                    <div class="message-error">
+                        <p data-members-error></p>
+                    </div>
+                </form>
+                </div>
+            </div>
+            {{/if}}
+        </section>

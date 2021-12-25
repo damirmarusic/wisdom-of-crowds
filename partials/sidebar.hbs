@@ -1,0 +1,101 @@
+<section class="sidebar">
+                <div class="sidebar-unit">
+                <div class="sidebar-headline">
+                    <div class="the-side-headline">
+                        The Crowd
+                    </div>
+                </div>
+                <div class="avatars-two">
+                    <div class="avatar">
+                        <a href="/author/damir/">
+                            <img class="avatar-image" srcset="/content/images/size/w100/2020/08/Damir.jpg 750w,
+                                            /content/images/size/w300/2020/08/Damir.jpg 1023w,
+                                            /content/images/size/w600/2020/08/Damir.jpg 1200w" sizes="(max-width: 1200px) 750px, 1023px" src="/content/images/size/w100/2020/08/Damir.jpg" alt="Damir Marusic">
+                        </a>
+                    </div>
+                    <div class="avatar">
+                        <a href="/author/shadi/">
+                            <img class="avatar-image" srcset="/content/images/size/w100/2020/09/Damico-ShadiHamid-4105SQUARE.jpg 750w,
+                                            /content/images/size/w300/2020/09/Damico-ShadiHamid-4105SQUARE.jpg 1023w,
+                                            /content/images/size/w600/2020/09/Damico-ShadiHamid-4105SQUARE.jpg 1200w" sizes="(max-width: 1200px) 750px, 1023px" src="/content/images/size/w100/2020/09/Damico-ShadiHamid-4105SQUARE.jpg" alt="Shadi Hamid">
+                        </a>
+                    </div>
+                </div>
+                <div class="avatars-two">
+                    <div class="avatar">
+                        <a href="/author/derek/">
+                            <img class="avatar-image" srcset="/content/images/size/w100/2021/11/Derek-3.png 750w,
+                                            /content/images/size/w300/2021/11/Derek-3.png 1023w,
+                                            /content/images/size/w600/2021/11/Derek-3.png 1200w" sizes="(max-width: 1200px) 750px, 1023px" src="/content/images/size/w300/2021/11/Derek-3.png" alt="Derek Hudson">
+                        </a>
+                    </div>
+                    <div class="avatar">
+                        <img src="{{asset 'images/WoC-Square.png'}}" alt="WisdomOfCrowds" class="avatar-image">
+                        <div class="avatar-meta">
+                            <div class="avatar-meta-item"><a href="https://www.youtube.com/channel/UCRifDS1hCvyaygkrY6W_9zQ"><i class="fab fa-youtube"></i></a></div>
+                            <div class="avatar-meta-item"><a href="https://twitter.com/wcrowdslive"><i class="fab fa-twitter"></i></a></div>
+                            <div class="avatar-meta-item"><a href="https://www.facebook.com/wisdomofcrowdsmedia"><i class="fab fa-facebook"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{^if @member}}
+            <div class="sidebar-unit signup">
+                <div class="sidebar-headline">
+                    <div class="the-side-headline">
+                        Get Our Newsletter
+                    </div>
+                </div>
+                <div class="form-group">
+                    <form data-members-form="signup">
+                    <div class="form-group-sidebar">
+                        <input data-members-email placeholder="Enter Your Email" autocomplete="false" />
+                        <button class="button primary" type="submit">
+                            <span class="button-content">SIGN UP</span>
+                            <span class="button-loader">{{> "icons/loader"}}</span>
+                        </button>
+                    </div>
+                    <div class="message-success">
+                        Check your inbox and click the link we sent you to confirm your email.
+                    </div>
+                    <div class="message-error">
+                        <p data-members-error></p>
+                    </div>
+                </form>
+                </div>
+            </div>
+            {{/if}}
+            <div class="sidebar-unit">
+                <div class="sidebar-headline">
+                    <div class="the-side-headline">
+                        Listen Here
+                    </div>
+                </div>
+                <div class="listen-icons">
+                    <div class="listen-icon">
+                        <div class="l-icon">
+                            <a href="https://podcasts.apple.com/us/podcast/the-wisdom-of-crowds/id1475204845"><i class="fas fa-podcast"></i></a>
+                        </div>
+                        <div class="l-label">iTunes</div>
+                    </div>
+                    <div class="listen-icon">
+                        <div class="l-icon">
+                            <a href="https://open.spotify.com/show/69U2Zw75VZkD4Cicly7WEy"><i class="fab fa-spotify"></i></a>
+                        </div>
+                        <div class="l-label">Spotify</div>
+                    </div>
+                    <div class="listen-icon">
+                        <div class="l-icon">
+                            <a href="https://podcasts.google.com/?feed=aHR0cDovL2ZlZWRzLnNvdW5kY2xvdWQuY29tL3VzZXJzL3NvdW5kY2xvdWQ6dXNlcnM6NjAyNTkxNDgvc291bmRzLnJzcw&ved=0CAUQrrcFahcKEwjA1fqopOjoAhUAAAAAHQAAAAAQBQ"><i class="fab fa-google"></i></a>
+                        </div>
+                        <div class="l-label">Google</div>
+                    </div>
+                    <div class="listen-icon">
+                        <div class="l-icon">
+                            <a href="https://www.stitcher.com/podcast/wisdom-of-crowds"><i class="fas fa-ellipsis-h"></i></a>
+                        </div>
+                        <div class="l-label">Stitcher</div>
+                    </div>
+                </div>
+            </div>
+        </section>

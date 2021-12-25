@@ -1,0 +1,18 @@
+{{!-- Not logged in: Signin form --}}
+        <div class="subscribe-form">
+            <form data-members-form="signin">
+                <div class="form-group">
+                    <input class="subscribe-email" data-members-email placeholder="Enter Your Email" autocomplete="false" />
+                    <button class="button primary" type="submit">
+                        <span class="button-content">Submit</span>
+                        <span class="button-loader">{{> "icons/loader"}}</span>
+                    </button>
+                </div>
+                <div class="message-success">
+                    <strong>Success!</strong> Check your inbox and click the link we sent you to log in.
+                </div>
+                <div class="message-error">
+                    <p data-members-error></p>
+                </div>
+            </form>
+        </div>

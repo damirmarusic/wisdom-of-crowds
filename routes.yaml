@@ -1,0 +1,65 @@
+routes:
+  /essays/:
+    controller: channel
+    order: published_at desc
+    template: drilldown
+    filter: tag:[monday_notes, editors_desk, first_drafts, hash-essays, friday_essays, notes]
+    data: page.essays
+  /editors_desk/:
+    controller: channel
+    template: drilldown
+    filter: tag:editors_desk
+    data: page.editors_desk
+  /democracy_essays/:
+    controller: channel
+    template: democracy_essays
+    filter: tag:democracy_essays
+    data: page.democracy_essays
+  /q-a/:
+    controller: channel
+    template: drilldown
+    filter: tag:q-a
+    data: page.q-a
+  /friday_essays/:
+    controller: channel
+    template: drilldown
+    filter: tag:friday_essays
+    data: page.friday_essays
+  /monday_notes/:
+    controller: channel
+    template: drilldown
+    filter: tag:monday_notes
+    data: page.monday_notes
+  /notes/:
+    controller: channel
+    template: drilldown
+    filter: tag:notes
+    data: page.notes
+  /first_drafts/:
+    controller: channel
+    template: drilldown
+    filter: tag:first_drafts
+    data: page.first_drafts
+  /debates/:
+    controller: channel
+    template: drilldown
+    filter: tag:debates
+    data: page.debates
+  /podcasts/:
+    controller: channel
+    template: drilldown
+    filter: tag:podcasts
+    data: page.podcasts
+  /podcasts/rss-members/:
+    template: podcasts-rss
+    content_type: text/xml
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+    filter: tag:-[hash-excerpt, hash-onlymail]
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

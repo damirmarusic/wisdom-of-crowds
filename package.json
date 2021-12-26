@@ -1,7 +1,7 @@
 {
     "name": "wisdom-of-crowds",
     "description": "A Theme for WoC.",
-    "version": "1.5",
+    "version": "1.5.5",
     "engines": {
         "ghost-api": "v4"
     },

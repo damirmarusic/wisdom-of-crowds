@@ -68,7 +68,9 @@
         <div class="menu">
             <div class="top-menu">
                 <div class="item decorated">{{#link href="/what-is-wisdom-of-crowds/"}}About{{/link}}</div>
+                {{#unless @member.paid}}
                 <div class="item decorated">{{#link href="#/portal/signup/"}}Support Us{{/link}}</div>
+                {{/unless}}
                 <div class="item decorated">
                     {{#if @member}}
                     <a href="#/portal/">Your Account</a>

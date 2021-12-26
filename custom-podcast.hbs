@@ -69,6 +69,7 @@
         {{/if}}
         {{/if}}
         {{> comments}}
+        {{> recent}}
     </div>
 </div>
 {{/post}}
@@ -79,15 +80,3 @@
     amplitude.getInstance().logEvent('Viewed Podcast');
     </script>
 {{/if}}
-<script>
-window.commentoCustomText = function(count) {
-  if(count === 0) {
-    return "No comments";
-  } else if (count === 1) {
-    return "1 comment";
-  } else {
-    return count + " comments";
-  }
-}
-</script>
-<script src="https://cdn.commento.io/js/count.js" data-custom-text="window.commentoCustomText"></script>

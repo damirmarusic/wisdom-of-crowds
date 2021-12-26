@@ -1,0 +1,25 @@
+<div class="recent-posts">
+<div class="recent-posts-title">Recent Posts</div>
+{{#get "posts" limit="3" order="published_at desc" include="authors" filter="tag:[monday_notes, editors_desk, first_drafts, hash-essays, friday_essays, notes]"}}
+	{{#foreach posts}}
+
+	<figure class="kg-card kg-bookmark-card">
+		<a class="kg-bookmark-container" href="{{slug}}">
+			<div class="kg-bookmark-content">
+				<div class="kg-bookmark-title">{{title}}</div>
+				<div class="kg-bookmark-description">{{excerpt}}</div>
+				<div class="kg-bookmark-metadata">
+					<img class="kg-bookmark-icon" src="{{@site.icon}}" alt="">
+					<span class="kg-bookmark-author">Wisdom of Crowds</span>
+					<span class="kg-bookmark-publisher">{{authors separator=" &amp; " limit="2" autolink="false"}}</span>
+				</div>
+			</div>
+			<div class="kg-bookmark-thumbnail">
+				<img src="{{feature_image}}" alt="">
+			</div>
+		</a>
+	</figure>
+
+	{{/foreach}}
+{{/get}}
+</div>

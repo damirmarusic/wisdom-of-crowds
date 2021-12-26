@@ -8,17 +8,22 @@
     <div class="article-single{{#if @member}} member-placeholder{{else}} non-member-placeholder{{/if}}">
         {{#has tag="First Draft"}}
         <p class="ednote">
-            Editor’s Note: “First Drafts” are attempts to work through tensions in our thinking in real time. {{^if @member}}If you like this post, consider <a href="/subscribe/">becoming a member</a> to support our work.{{/if}}
+            Editor’s Note: “First Drafts” are attempts to work through tensions in our thinking in real time. {{^if @member}}If you like this post, consider <a href="#/portal/signup">becoming a member</a> to support our work.{{/if}}
         </p>
         {{/has}}
         {{#has tag="Debate"}}
         <p class="ednote">
-            Editor's Note: Welcome to a Wisdom of Crowds "Debate." The goal is to explore why we believe the things we believe, working through the tensions and contradictions in real time. {{^if @member}}If you like this post, consider <a href="/subscribe/">becoming a member</a> to support our work.{{/if}}
+            Editor's Note: Welcome to a Wisdom of Crowds "Debate." The goal is to explore why we believe the things we believe, working through the tensions and contradictions in real time. {{^if @member}}If you like this post, consider <a href="#/portal/signup">becoming a member</a> to support our work.{{/if}}
         </p>
         {{/has}}
         {{#has tag="Notes"}}
         <p class="ednote">
-            Editor's Note: Our least structured thoughts are published regularly as "Notes." These include germs of arguments, random musings, and updates on what we are reading and writing. {{^if @member}}If you like this post, consider <a href="/subscribe/">becoming a member</a> to support our work.{{/if}}
+            Editor's Note: Our least structured thoughts are published regularly as "Notes." These include germs of arguments, random musings, and updates on what we are reading and writing. {{^if @member}}If you like this post, consider <a href="#/portal/signup">becoming a member</a> to support our work.{{/if}}
+        </p>
+        {{/has}}
+        {{#has tag="Q&A"}}
+        <p class="ednote">
+            Editor's note: Q&amp;A posts are for {{^if @member}}<a href="#/portal/signup">{{/if}}subscribers only{{^if @member}}</a>{{/if}}. Ask us (almost) anything your heart desires, and we will publish answers every other week. Questions can be submitted by <a href="mailto:wisdomcrowdspod@gmail.com">email</a> or through <a href="https://twitter.com/wcrowdslive">Twitter</a>.
         </p>
         {{/has}}
         {{#if access}}

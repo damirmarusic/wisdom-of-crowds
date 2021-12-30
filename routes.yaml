@@ -53,6 +53,12 @@ routes:
   /podcasts/rss-members/:
     template: podcasts-rss
     content_type: text/xml
+  /subscribe/:
+    template: subscribe
+    data: page.subscribe
+  /signup/:
+    template: signup
+    data: page.signup
 
 collections:
   /:

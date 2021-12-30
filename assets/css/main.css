@@ -32,7 +32,7 @@ a:hover {
 }
 
 audio {
-  margin: 0px auto;
+  margin: 1rem auto;
   width: 100%;
   border-radius: 90px;
   transform: scale(1.05);
@@ -918,13 +918,15 @@ body {
   color: #444;
   font-size: 1rem;
   width: 85%;
-  margin: 0px auto;
+  margin: 1rem auto;
 }
 .article-container .article-single > p {
-  margin: 1.7rem 0;
+  margin: 1rem 0;
   line-height: 1.6;
   font-size: 1.1rem;
   font-family: "PT Serif", serif;
+  text-align: left;
+  width: 100%;
 }
 .article-container .article-single > h2 {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", Ubuntu;
@@ -942,8 +944,8 @@ body {
   justify-content: center;
 }
 .article-container .article-single > hr {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   border: 0;
   height: 1px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
@@ -2299,7 +2301,7 @@ img.kg-bookmark-icon {
 }
 
 #cove-comments-holder {
-  margin: 20px 30px;
+  margin: 1rem 30px;
 }
 #cove-comments-holder h2 {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", Ubuntu;
@@ -2334,4 +2336,8 @@ img.gs-image {
 
 .gsc-webResult.gsc-result {
   padding: 10px;
+}
+
+.subscribe-button-post {
+  margin: 1rem auto;
 }

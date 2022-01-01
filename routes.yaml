@@ -64,7 +64,14 @@ collections:
   /:
     permalink: /{slug}/
     template: index
-    filter: tag:-[hash-excerpt, hash-onlymail]
+    order: published_at desc
+    filter: tag:[monday_notes, editors_desk, first_drafts, friday_essays, notes, q-a, debates, podcasts, democracy_essays]
+  /discursive/:
+    permalink: /discursive/{year}/{month}/{day}/{slug}/
+    template: discursive
+    order: published_at desc
+    filter: primary_tag:discursive
+    data: page.discursive
 
 taxonomies:
   tag: /tag/{slug}/

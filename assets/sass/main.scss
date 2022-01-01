@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,400;1,700&family=Open+Sans+Condensed:wght@700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,300&family=Qwitcher+Grypen:wght@700&display=swap');
 
 $woc-gray: #666;
 $woc-red: #B70000;
@@ -15,6 +15,8 @@ $woc-blurb: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
 $woc-body: 'PT Serif', serif;
 $woc-meta: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto', Ubuntu;
 $woc-button: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto', Ubuntu;
+$woc-cursive: 'Qwitcher Grypen', cursive;
+$woc-demessays: 'Cormorant', serif;
 
 $woc-menu-all: normal normal 700 0.8rem/1 -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto', Ubuntu;
 
@@ -975,10 +977,19 @@ body {
         width: 100%;
     }
     #demessays-title {
-        font-family: Oswald;
+        font-family: $woc-demessays;
         text-align: center;
         font-size: 2rem;
         margin-bottom: 20px;
+    }
+    #discursive-title {
+        font-family: $woc-cursive;
+        text-align: center;
+        font-size: 4rem;
+        margin-bottom: 20px;
+        a, a:visited {
+            text-decoration: none;
+        }
     }
     .tag-hash-onlymail {
         display: none;
@@ -990,6 +1001,10 @@ body {
         width: 100%;
         margin-right: 40px;
         margin-left: 40px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
         @include for-tablet-landscape() {
             margin: 0px 20px 0px 0px;
             width: 900px;
@@ -1001,6 +1016,80 @@ body {
         @include for-phone-only() {
             width: 100%;
             margin: 0px auto;
+        }
+        .discourse {
+            hr {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                border : 0;
+                height: 1px; 
+                background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            }
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid $woc-gray;
+            border-radius: 15px;
+            .discourse-hero-holder {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                .discourse-image-container {
+                    width: 100px;
+                    height: 100px;
+                    .discourse-image {
+                        object-fit: cover;
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+                .discourse-single-image-container {
+                    width: 150px;
+                    height: 150px;
+                    .discourse-single-image {
+                        object-fit: cover;
+                        width: 150px;
+                        height: 150px;
+                    }
+                }
+                .discourse-title-meta-holder {
+                    margin-left: 20px;
+                }
+                .discourse-title {
+                    display: block;
+                    font-family: $woc-headline;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    margin-bottom: -7px;
+                    a, a:visited {
+                        text-decoration: none;
+                    }
+                }
+                .discourse-single-title {
+                    display: block;
+                    font-family: $woc-headline;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    a, a:visited {
+                        text-decoration: none;
+                    }
+                }
+                .discourse-meta {
+                    font-family: $woc-meta;
+                    color: $woc-gray;
+                    font-size: .8rem;
+                }
+            }
+            .discourse-body {
+                p {
+                    margin: 1rem 0;
+                    line-height: 1.6;
+                    font-size: 1rem;
+                    font-family: $woc-body;
+                    text-align: left;
+                    width: 100%;
+                }
+            }
         }
         .article {
             margin: 0px auto 50px;
@@ -1216,6 +1305,7 @@ body {
         }
         .sidebar-headline {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             .the-side-headline {
                 font-family: $woc-meta;
@@ -1227,6 +1317,26 @@ body {
                 @include for-tablet-portrait() {
                     font-size: .7rem;
                 }
+            }
+            .the-discourse-side-headline {
+                font-family: $woc-meta;
+                font-size: .8rem;
+                font-weight: 700;
+                text-align: center;
+                color: #333;
+                text-transform: uppercase;
+                @include for-tablet-portrait() {
+                    font-size: .7rem;
+                }
+            }
+            .the-discourse-side-description {
+                font-family: $woc-meta;
+                font-size: .7rem;
+                font-weight: 400;
+                color: #333;
+                padding-left: 20px;
+                padding-top: 5px;
+                font-style: italic;
             }
         }
         .form-group {

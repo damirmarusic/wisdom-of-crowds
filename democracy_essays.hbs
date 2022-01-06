@@ -31,7 +31,7 @@
                     <span class="article-byline">{{authors separator=" &amp; "}}</span>
                 </span>
                 <span class="article-tags">
-                {{#foreach tags}}<span class="tag">{{name}}</span>{{/foreach}}
+                {{#foreach tags limit=1}}<span class="tag">{{name}}</span>{{/foreach}}
                 {{#has visibility="paid"}}
                     <span class="tag member">Members Only</span>
                 {{/has}}

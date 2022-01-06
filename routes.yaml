@@ -8,48 +8,48 @@ routes:
   /editors_desk/:
     controller: channel
     template: drilldown
-    filter: tag:editors_desk
-    data: page.editors_desk
+    filter: primary_tag:editors_desk
+    data: tag.editors_desk
   /democracy_essays/:
     controller: channel
     template: democracy_essays
     filter: tag:democracy_essays
-    data: page.democracy_essays
+    data: tag.democracy_essays
   /q-a/:
     controller: channel
     template: drilldown
-    filter: tag:q-a
-    data: page.q-a
+    filter: primary_tag:q-a
+    data: tag.q-a
   /friday_essays/:
     controller: channel
     template: drilldown
-    filter: tag:friday_essays
-    data: page.friday_essays
+    filter: primary_tag:friday_essays
+    data: tag.friday_essays
   /monday_notes/:
     controller: channel
     template: drilldown
-    filter: tag:monday_notes
-    data: page.monday_notes
+    filter: primary_tag:monday_notes
+    data: tag.monday_notes
   /notes/:
     controller: channel
     template: drilldown
-    filter: tag:notes
-    data: page.notes
+    filter: primary_tag:notes
+    data: tag.notes
   /first_drafts/:
     controller: channel
     template: drilldown
-    filter: tag:first_drafts
-    data: page.first_drafts
+    filter: primary_tag:first_drafts
+    data: tag.first_drafts
   /debates/:
     controller: channel
     template: drilldown
-    filter: tag:debates
-    data: page.debates
+    filter: primary_tag:debates
+    data: tag.debates
   /podcasts/:
     controller: channel
     template: drilldown
-    filter: tag:podcasts
-    data: page.podcasts
+    filter: primary_tag:podcasts
+    data: tag.podcasts
   /podcasts/rss-members/:
     template: podcasts-rss
     content_type: text/xml
@@ -65,13 +65,13 @@ collections:
     permalink: /{slug}/
     template: index
     order: published_at desc
-    filter: tag:[monday_notes, editors_desk, first_drafts, friday_essays, notes, q-a, debates, podcasts, democracy_essays]
-  /discursive/:
-    permalink: /discursive/{year}/{month}/{day}/{slug}/
-    template: discursive
+    filter: tag:-[fighting_words, hash-excerpt, hash-onlymail]
+  /fighting_words/:
+    permalink: /fighting_words/{year}/{month}/{day}/{slug}/
+    template: fighting_words
     order: published_at desc
-    filter: primary_tag:discursive
-    data: page.discursive
+    filter: primary_tag:fighting_words
+    data: tag.fighting_words
 
 taxonomies:
   tag: /tag/{slug}/

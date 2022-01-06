@@ -948,6 +948,7 @@ body {
   margin-bottom: 1rem;
   border: 0;
   height: 1px;
+  width: 100%;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 .article-container .article-single > ul {
@@ -967,8 +968,8 @@ body {
   margin: 0;
 }
 .article-container .article-single figcaption {
-  text-align: right;
-  font-size: 0.9em;
+  text-align: left;
+  font-size: 0.8em;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", Ubuntu;
   color: #666;
   font-style: italic;
@@ -1070,6 +1071,12 @@ body {
 .homepage {
   margin: 50px auto;
 }
+@media (max-width: 750px) {
+  .homepage {
+    width: 100%;
+    margin: 40px auto;
+  }
+}
 
 .index {
   margin: 0px auto;
@@ -1100,12 +1107,14 @@ body {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 20px;
+  width: 100%;
 }
 .main-container #discursive-title {
   font-family: "Qwitcher Grypen", cursive;
   text-align: center;
   font-size: 4rem;
-  margin-bottom: 20px;
+  margin: -10px 0px 0px 0px;
+  width: 100%;
 }
 .main-container #discursive-title a, .main-container #discursive-title a:visited {
   text-decoration: none;
@@ -1124,6 +1133,7 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 @media (max-width: 1200px) {
   .main-container .articles {
@@ -1144,10 +1154,29 @@ body {
   }
 }
 .main-container .articles .discourse {
-  margin-bottom: 40px;
-  padding: 20px;
-  border: 1px solid #666;
-  border-radius: 15px;
+  padding: 0px 30px 0px 30px;
+  width: 100%;
+}
+@media (max-width: 750px) {
+  .main-container .articles .discourse {
+    width: 95%;
+    margin: 0px auto 40px;
+  }
+}
+.main-container .articles .discourse .discourse-feature-image-container {
+  width: 100%;
+  height: 290px;
+  margin-bottom: 30px;
+}
+@media (max-width: 750px) {
+  .main-container .articles .discourse .discourse-feature-image-container {
+    height: 250px;
+  }
+}
+.main-container .articles .discourse .discourse-feature-image-container .discourse-feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .main-container .articles .discourse hr {
   margin-top: 1rem;
@@ -1156,6 +1185,58 @@ body {
   height: 1px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
+.main-container .articles .discourse .discourse-single-hero-holder {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.main-container .articles .discourse .discourse-single-hero-holder .discourse-single-image-container {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+}
+@media (max-width: 750px) {
+  .main-container .articles .discourse .discourse-single-hero-holder .discourse-single-image-container {
+    width: 30px;
+    height: 30px;
+  }
+}
+.main-container .articles .discourse .discourse-single-hero-holder .discourse-single-image-container .discourse-single-image {
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 750px) {
+  .main-container .articles .discourse .discourse-single-hero-holder .discourse-single-image-container .discourse-single-image {
+    width: 30px;
+    height: 30px;
+  }
+}
+.main-container .articles .discourse .discourse-single-hero-holder .discourse-single-title-meta-holder {
+  margin-left: 20px;
+}
+.main-container .articles .discourse .discourse-single-hero-holder .discourse-single-title {
+  display: block;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", Ubuntu;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 2.3rem;
+  text-align: center;
+}
+.main-container .articles .discourse .discourse-single-hero-holder .discourse-single-title a, .main-container .articles .discourse .discourse-single-hero-holder .discourse-single-title a:visited {
+  text-decoration: none;
+}
+.main-container .articles .discourse .discourse-single-meta {
+  width: 100%;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", Ubuntu;
+  color: #666;
+  font-size: 0.8rem;
+  line-height: 2rem;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+}
 .main-container .articles .discourse .discourse-hero-holder {
   display: flex;
   flex-direction: row;
@@ -1163,22 +1244,25 @@ body {
   align-items: center;
 }
 .main-container .articles .discourse .discourse-hero-holder .discourse-image-container {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+}
+@media (max-width: 750px) {
+  .main-container .articles .discourse .discourse-hero-holder .discourse-image-container {
+    width: 80px;
+    height: 80px;
+  }
 }
 .main-container .articles .discourse .discourse-hero-holder .discourse-image-container .discourse-image {
   object-fit: cover;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
-.main-container .articles .discourse .discourse-hero-holder .discourse-single-image-container {
-  width: 150px;
-  height: 150px;
-}
-.main-container .articles .discourse .discourse-hero-holder .discourse-single-image-container .discourse-single-image {
-  object-fit: cover;
-  width: 150px;
-  height: 150px;
+@media (max-width: 750px) {
+  .main-container .articles .discourse .discourse-hero-holder .discourse-image-container .discourse-image {
+    width: 80px;
+    height: 80px;
+  }
 }
 .main-container .articles .discourse .discourse-hero-holder .discourse-title-meta-holder {
   margin-left: 20px;
@@ -1188,7 +1272,7 @@ body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", Ubuntu;
   font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: -7px;
+  line-height: 1.6rem;
 }
 .main-container .articles .discourse .discourse-hero-holder .discourse-title a, .main-container .articles .discourse .discourse-hero-holder .discourse-title a:visited {
   text-decoration: none;
@@ -1198,6 +1282,7 @@ body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", Ubuntu;
   font-size: 1.6rem;
   font-weight: 700;
+  line-height: 1.6rem;
 }
 .main-container .articles .discourse .discourse-hero-holder .discourse-single-title a, .main-container .articles .discourse .discourse-hero-holder .discourse-single-title a:visited {
   text-decoration: none;
@@ -1206,6 +1291,7 @@ body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", Ubuntu;
   color: #666;
   font-size: 0.8rem;
+  line-height: 0.6rem;
 }
 .main-container .articles .discourse .discourse-body p {
   margin: 1rem 0;
@@ -1215,10 +1301,65 @@ body {
   text-align: left;
   width: 100%;
 }
+.main-container .articles .discourse .discourse-body blockquote {
+  line-height: 1.5;
+  font-style: normal;
+  width: 85%;
+  margin: 0px auto;
+  color: #444;
+}
+.main-container .articles .discourse .discourse-body .kg-image-card > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.main-container .articles .discourse .discourse-body figure.kg-image-card {
+  margin: 30px 0px 0px 0px;
+}
+.main-container .articles .discourse .discourse-body figcaption {
+  text-align: left;
+  font-size: 0.6em;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", Ubuntu;
+  color: #666;
+  font-style: italic;
+}
+.main-container .articles .discourse .discourse-prev-next {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", Ubuntu;
+  color: #aaa;
+  font-size: 0.7rem;
+  margin-top: 2rem;
+}
+.main-container .articles .discourse .discourse-prev-next a, .main-container .articles .discourse .discourse-prev-next a:visited {
+  color: #aaa;
+}
+.main-container .articles .discourse .discourse-prev-next a:hover {
+  color: #67b7e9;
+}
+.main-container .articles .discourse .discourse-prev-next .discourse-prev {
+  display: block;
+  min-width: 5px;
+}
+.main-container .articles .discourse .discourse-prev-next .discourse-next {
+  display: block;
+  min-width: 5px;
+  text-align: right;
+}
+.main-container .articles .discourse-divider {
+  text-align: center;
+  width: 100%;
+  font-family: "Qwitcher Grypen", cursive;
+  font-size: 2rem;
+  color: #666;
+  margin: 5px 0px;
+}
 .main-container .articles .article {
   margin: 0px auto 50px;
   display: flex;
   align-items: flex-start;
+  width: 100%;
 }
 @media (max-width: 1023px) {
   .main-container .articles .article {
@@ -1413,9 +1554,12 @@ body {
   margin-right: 20px;
   font-weight: 700;
 }
-.main-container .sidebar {
+.main-container .sticky {
   position: sticky;
   top: 0;
+  display: block;
+}
+.main-container .sidebar {
   width: 250px;
   margin-left: 0px;
   border-left: 1px solid #ddd;

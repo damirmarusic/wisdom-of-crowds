@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,400;1,700&family=Open+Sans+Condensed:wght@700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,300&family=Qwitcher+Grypen:wght@700&display=swap');
 
 $woc-gray: #666;
 $woc-red: #B70000;
@@ -15,6 +15,8 @@ $woc-blurb: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
 $woc-body: 'PT Serif', serif;
 $woc-meta: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto', Ubuntu;
 $woc-button: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto', Ubuntu;
+$woc-cursive: 'Qwitcher Grypen', cursive;
+$woc-demessays: 'Cormorant', serif;
 
 $woc-menu-all: normal normal 700 0.8rem/1 -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto', Ubuntu;
 
@@ -842,6 +844,7 @@ body {
             margin-bottom: 1rem;
             border : 0;
             height: 1px; 
+            width: 100%;
             background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); 
         }
         > ul {
@@ -861,8 +864,8 @@ body {
             margin: 0;
         }
         figcaption {
-            text-align: right;
-            font-size: 0.9em;
+            text-align: left;
+            font-size: 0.8em;
             font-family: $woc-blurb;
             color: $woc-gray;
             font-style: italic;
@@ -957,6 +960,10 @@ body {
 }
 .homepage {
     margin: 50px auto;
+    @include for-phone-only() {
+        width: 100%;
+        margin: 40px auto;
+    }
 }
 .index {
     margin: 0px auto;
@@ -975,10 +982,21 @@ body {
         width: 100%;
     }
     #demessays-title {
-        font-family: Oswald;
+        font-family: $woc-demessays;
         text-align: center;
         font-size: 2rem;
         margin-bottom: 20px;
+        width: 100%;
+    }
+    #discursive-title {
+        font-family: $woc-cursive;
+        text-align: center;
+        font-size: 4rem;
+        margin: -10px 0px 0px 0px;
+        width: 100%;
+        a, a:visited {
+            text-decoration: none;
+        }
     }
     .tag-hash-onlymail {
         display: none;
@@ -990,6 +1008,11 @@ body {
         width: 100%;
         margin-right: 40px;
         margin-left: 40px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
         @include for-tablet-landscape() {
             margin: 0px 20px 0px 0px;
             width: 900px;
@@ -1002,10 +1025,203 @@ body {
             width: 100%;
             margin: 0px auto;
         }
+        .discourse {
+            padding: 0px 30px 0px 30px;
+            width: 100%;
+            @include for-phone-only() {
+                width: 95%;
+                margin: 0px auto 40px;
+            }
+            .discourse-feature-image-container {
+                width: 100%;
+                height: 290px;
+                margin-bottom: 30px;
+                @include for-phone-only() {
+                    height: 250px;
+                }
+                .discourse-feature-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            hr {
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                    border : 0;
+                    height: 1px; 
+                    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+                }
+            .discourse-single-hero-holder {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+                .discourse-single-image-container {
+                    width: 30px;
+                    height: 30px;
+                    margin-bottom: 8px;
+                    @include for-phone-only() {
+                        width: 30px;
+                        height: 30px;
+                    }
+                    .discourse-single-image {
+                        object-fit: cover;
+                        width: 30px;
+                        height: 30px;
+                        @include for-phone-only() {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+                .discourse-single-title-meta-holder {
+                    margin-left: 20px;
+                }
+                .discourse-single-title {
+                    display: block;
+                    font-family: $woc-headline;
+                    font-size: 2.2rem;
+                    font-weight: 700;
+                    line-height: 2.3rem;
+                    text-align: center;
+                    a, a:visited {
+                        text-decoration: none;
+                    }
+                }
+            }
+            .discourse-single-meta {
+                width: 100%;
+                font-family: $woc-meta;
+                color: $woc-gray;
+                font-size: .8rem;
+                line-height: 2rem;
+                text-align: center;
+                display: block;
+                margin-top: 5px;
+            }
+            .discourse-hero-holder {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                .discourse-image-container {
+                    width: 70px;
+                    height: 70px;
+                    @include for-phone-only() {
+                        width: 80px;
+                        height: 80px;
+                    }
+                    .discourse-image {
+                        object-fit: cover;
+                        width: 70px;
+                        height: 70px;
+                        @include for-phone-only() {
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
+                }
+                .discourse-title-meta-holder {
+                    margin-left: 20px;
+                }
+                .discourse-title {
+                    display: block;
+                    font-family: $woc-headline;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    line-height: 1.6rem;
+                    a, a:visited {
+                        text-decoration: none;
+                    }
+                }
+                .discourse-single-title {
+                    display: block;
+                    font-family: $woc-headline;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    line-height: 1.6rem;
+                    a, a:visited {
+                        text-decoration: none;
+                    }
+                }
+                .discourse-meta {
+                    font-family: $woc-meta;
+                    color: $woc-gray;
+                    font-size: .8rem;
+                    line-height: .6rem;
+                }
+            }
+            .discourse-body {
+                p {
+                    margin: 1rem 0;
+                    line-height: 1.6;
+                    font-size: 1rem;
+                    font-family: $woc-body;
+                    text-align: left;
+                    width: 100%;
+                }
+                blockquote {
+                    line-height: 1.5;
+                    font-style: normal;
+                    width: 85%;
+                    margin: 0px auto;
+                    color: #444;
+                }
+                .kg-image-card>img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                }
+                figure.kg-image-card {
+                    margin: 30px 0px 0px 0px;
+                }
+                figcaption {
+                    text-align: left;
+                    font-size: 0.6em;
+                    font-family: $woc-blurb;
+                    color: $woc-gray;
+                    font-style: italic;
+                }
+            }
+            .discourse-prev-next {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-family: $woc-meta;
+                color: #aaa;
+                font-size: 0.7rem;
+                margin-top: 2rem;
+                a, a:visited {
+                    color: #aaa;
+                }
+                a:hover {
+                    color: $woc-blue;
+                }
+                .discourse-prev {
+                    display: block;
+                    min-width: 5px;
+                }
+                .discourse-next {
+                    display: block;
+                    min-width: 5px;
+                    text-align: right;
+                }
+            }
+        }
+        .discourse-divider {
+            text-align: center;
+            width: 100%;
+            font-family: $woc-cursive;
+            font-size: 2rem;
+            color: $woc-gray;
+            margin: 5px 0px;
+        }
         .article {
             margin: 0px auto 50px;
             display: flex;
             align-items: flex-start;
+            width: 100%;
             @include for-tablet-portrait() {
                 align-items: flex-start;
             }
@@ -1167,9 +1383,12 @@ body {
             }
         }
     }
-    .sidebar {
+    .sticky {
         position: sticky;
         top: 0;
+        display: block;
+    }
+    .sidebar {
         width: 250px;
         margin-left: 0px;
         border-left: 1px solid #ddd;
@@ -1216,6 +1435,7 @@ body {
         }
         .sidebar-headline {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             .the-side-headline {
                 font-family: $woc-meta;
@@ -1227,6 +1447,26 @@ body {
                 @include for-tablet-portrait() {
                     font-size: .7rem;
                 }
+            }
+            .the-discourse-side-headline {
+                font-family: $woc-meta;
+                font-size: .8rem;
+                font-weight: 700;
+                text-align: center;
+                color: #333;
+                text-transform: uppercase;
+                @include for-tablet-portrait() {
+                    font-size: .7rem;
+                }
+            }
+            .the-discourse-side-description {
+                font-family: $woc-meta;
+                font-size: .7rem;
+                font-weight: 400;
+                color: #333;
+                padding-left: 20px;
+                padding-top: 5px;
+                font-style: italic;
             }
         }
         .form-group {

@@ -1,0 +1,57 @@
+<section class="sidebar">
+            <div class="sidebar-unit">
+                <div class="sidebar-headline">
+                    <div class="the-discourse-side-headline">
+                        What is Discursive?
+                    </div>
+                    <div class="the-discourse-side-description">
+                        Unfiltered thoughts and unbaked ideas. An occasional group blog from Wisdom of Crowds.
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-unit curated">
+                <div class="sidebar-headline">
+                    <div class="the-side-headline">
+                        Contributors:
+                    </div>
+                </div>
+                <div class="avatars-two">
+                    <div class="avatar">
+                        <a href="/author/damir/">
+                            <img class="avatar-image" src="/content/images/size/w100/2021/12/dm-profile.jpg" alt="Damir Marusic">
+                        </a>
+                    </div>
+                    <div class="avatar">
+                        <a href="/author/shadi/">
+                            <img class="avatar-image" src="/content/images/size/w100/2020/09/Damico-ShadiHamid-4105SQUARE.jpg" alt="Shadi Hamid">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{^if @member}}
+            <div class="sidebar-unit signup">
+                <div class="sidebar-headline">
+                    <div class="the-side-headline">
+                        Sign Up For Wisdom of Crowds
+                    </div>
+                </div>
+                <div class="form-group">
+                    <form data-members-form="signup">
+                    <div class="form-group-sidebar">
+                        <input data-members-email placeholder="Enter Your Email" autocomplete="false" />
+                        <button class="button primary" type="submit">
+                            <span class="button-content">SIGN UP</span>
+                            <span class="button-loader">{{> "icons/loader"}}</span>
+                        </button>
+                    </div>
+                    <div class="message-success">
+                        Check your inbox and click the link we sent you to confirm your email.
+                    </div>
+                    <div class="message-error">
+                        <p data-members-error></p>
+                    </div>
+                </form>
+                </div>
+            </div>
+            {{/if}}
+        </section>

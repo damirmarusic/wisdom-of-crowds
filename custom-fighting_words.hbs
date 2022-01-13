@@ -1,0 +1,52 @@
+{{!< default}}
+        </div>
+    </div>
+</nav>
+<div class="main-container homepage">
+    <!-- Normal Articles -->
+    {{#post}}
+    <section class="articles">
+        <div id="discursive-title"><a href="{{@site.url}}/fighting_words/">Fighting Words</a></div>
+        <div class="discourse">
+            {{#if feature_image}}
+            <figure class="discourse-feature-image-container">
+                <img class="discourse-feature-image" 
+                    srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 750w"
+                    sizes="(max-width: 750px) 750px, 300px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{title}}">
+            </figure>
+            {{/if}}
+            <div class="discourse-single-hero-holder">
+                <figure class="discourse-single-image-container">
+                    <img class="discourse-single-image" src="{{asset 'images/WoC-Square-trans.png'}}" alt="{{title}}">
+                </figure>
+                <div class="discourse-single-title-meta-holder">
+                    <span class="discourse-single-title">{{title}}</span>
+                </div>
+            </div>
+            <span class="discourse-single-meta">
+                <span class="discourse-byline">{{authors separator=" &amp; "}}</span> | {{date}} | 0 Comments | <a href="https://twitter.com/intent/tweet?via=wcrowdslive&url={{url absolute='true'}}"><i class="fab fa-twitter"></i></a>
+            </span>
+            <hr/>
+            <span class="discourse-body">
+                {{content}}
+            </span>
+            <div class="discourse-prev-next">
+                <span class="discourse-prev">
+                    {{#prev_post in="primary_tag"}}
+                        <a href="{{url}}"><i class="fas fa-arrow-left"></i> &ldquo;{{title}}&rdquo;</a>
+                    {{/prev_post}}
+                </span>
+                <span class="discourse-next">
+                    {{#next_post in="primary_tag"}}
+                        <a href="{{url}}">&ldquo;{{title}}&rdquo; <i class="fas fa-arrow-right"></i></a> 
+                    {{/next_post}}
+                </span>
+            </div>
+        </div>
+    </section>
+    {{/post}}
+    {{> sidebar-fighting_words}}
+</div>

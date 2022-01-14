@@ -65,13 +65,13 @@ collections:
     permalink: /{slug}/
     template: index
     order: published_at desc
-    filter: tag:-[fighting_words, hash-excerpt, hash-onlymail]
-  /fighting_words/:
-    permalink: /fighting_words/{year}/{month}/{day}/{slug}/
-    template: fighting_words
+    filter: tag:-[friends_enemies, hash-excerpt, hash-onlymail]
+  /friends_enemies/:
+    permalink: /friends_enemies/{year}/{month}/{day}/{slug}/
+    template: friends_enemies
     order: published_at desc
-    filter: primary_tag:fighting_words
-    data: tag.fighting_words
+    filter: primary_tag:friends_enemies
+    data: tag.friends_enemies
 
 taxonomies:
   tag: /tag/{slug}/
